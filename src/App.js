@@ -4,22 +4,11 @@ import { useEffect, useState } from 'react';
 import { apiServices } from './apiServices';
 
 
-//City and state datas
 const cityData = {
-  Tamilnadu: ['Chennai', 'Trichy', 'Dindigul', 'Madurai', 'Coimbatore'],
-  Kerla: ['Palakad', 'Kolzikod', 'Alapi', 'Tiruvandram'],
-  AndraPradesh: ['Hyderabad', 'Vijayawada', 'Visakhapatnam', 'Guntur'],
-  Karnataka: ['Bangalore', 'Mysore', 'Mangalore', 'Hubli'],
+  Zhejiang: ['Hangzhou', 'Ningbo', 'Wenzhou'],
+  Jiangsu: ['Nanjing', 'Suzhou', 'Zhenjiang'],
 };
-const provinceData = {
-  India:['Kerla','AndraPradesh', 'Karnataka', 'Tamilnadu' ],
-  USA:['California', 'Texas', 'New York', 'Florida'],
-  UK:['London', 'Manchester', 'Birmingham', 'Liverpool'],
-  Australia:['Sydney', 'Melbourne', 'Brisbane', 'Perth'],
-  Germany:['Berlin', 'Hamburg', 'Munich', 'Cologne'],
-};
-  
-const provinceDataCountry = ['India','USA', 'UK', 'Australia', 'Germany' ];
+const stateData = ['Zhejiang', 'Jiangsu'];
 
 function App() {
   // useEffect(()=>{
@@ -41,9 +30,14 @@ function App() {
   };
 
   //Country,state and city
-  const [country, setCountry] = useState('');
-  const [cities, setCities] = useState(cityData[provinceData[0]]);
-  const [secondCity, setSecondCity] = useState(cityData[provinceData[0]][0]);
+  const [cities, setCities] = useState( 
+    cityData
+    [stateData[0]]
+  );
+  const [secondCity, setSecondCity] = useState(
+    cityData
+    [stateData[0]]
+    [0]);
   const handleProvinceChange = (value) => {
     setCities(cityData[value]);
     setSecondCity(cityData[value][0]);
@@ -51,8 +45,9 @@ function App() {
   const onSecondCityChange = (value) => {
     setSecondCity(value);
   };
-  
+
   const onFinish = (values) => {
+    //
     console.log(values);
   };
 
@@ -84,31 +79,23 @@ function App() {
       <InputNumber />
     </Form.Item>
 
-    <Form.Item label="Country" >
-    <Select
-        placeholder="Select Country"
-        onChange={handleProvinceChange}
-        options={countryData.map((country) => ({
-          label: country,
-          value: country,
-        }))}
-      />
+    <Form.Item label="Country">
+      <Select/>
     </Form.Item>
 
     <Form.Item label="State" >
     <Select
-        placeholder="Select State "
+        defaultValue={stateData[0]}
         onChange={handleProvinceChange}
-        options={provinceData.map((state) => ({
-          label: state,
-          value: state,
+        options={stateData.map((province) => ({
+          label: province,
+          value: province,
         }))}
       />
     </Form.Item>
 
     <Form.Item label="City" >
     <Select
-        placeholder="select City  "
         value={secondCity}
         onChange={onSecondCityChange}
         options={cities.map((city) => ({
