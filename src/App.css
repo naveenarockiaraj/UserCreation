@@ -1,1 +1,58 @@
-
+body{
+    background:url(https://images.pexels.com/photos/1631677/pexels-photo-1631677.jpeg?auto=compress&cs=tinysrgb&w=600); 
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#div-1{
+    display: block;
+    align-items: center;
+    justify-content: center;    
+    position: relative;
+    margin: 90px auto;
+    background: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    transition: 0.5s box-shadow;  
+    background:url( );
+    width: 600px;
+    border-radius: 2rem;
+    height: 630px;
+}
+#div-1:hover{box-shadow: 1px 2px 4px 4px #c8c1dd;
+    /* filter: blur(0px);
+    transform: scale(1.1);
+    opacity: 1; */
+}
+#form-new{
+    margin: 50px;
+    padding-top: 60px;
+    width: auto;
+}
+#form-new .ant-form-item-control-input .ant-input-number {
+  width: 100%;
+}
+#ant-btn{
+    margin-left: -10px;
+    width: 200px;
+    color: #0206ff;
+    font-weight: 300;
+    background-color: #81a9e0;
+    
+    }
+#ant-btn:hover{
+    background:url(https://images.pexels.com/photos/1723637/pexels-photo-1723637.jpeg?auto=compress&cs=tinysrgb&w=600);
+    color: rgb(199, 139, 139);
+    font-weight: bold;
+    box-shadow:1px 1px 1px 1px #675cce;
+    animation: 2s;
+}
+h1{
+    margin-top: -50px;
+    text-align: center;
+}
+#ant-btn-2{
+    margin-left: 10px;
+    width: 200px;
+}
