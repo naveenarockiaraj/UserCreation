@@ -14,11 +14,22 @@ function App() {
   const statesList = [
     {id: 1, name: "Maharashtra", country_id: 1},    
     {id: 2, name: "Karnataka", country_id: 1},    
-    {id: 3,name: "New York", country_id: 2}
+    {id: 3,name: "New York", country_id: 2},
+    {id: 4,name: "Indiana", country_id: 2},
+    {id: 5,name: "London", country_id: 3},
+    {id: 6,name: "Barca", country_id: 3},
+    {id: 7,name: "Albert", country_id: 4},
+    {id: 8,name: "Quebec", country_id: 4},
   ];
-  const citiesLits = [{id: 1, name: "Mumbai", state_id: 1},
+  const citiesLits = [
+    {id: 1, name: "Mumbai", state_id: 1},
     {id: 2, name: "Bangalore", state_id: 2},
-    {id: 3, name: "New York City", state_id: 3}
+    {id: 3, name: "New York City", state_id: 3},
+    {id: 4, name: "Hawkins", state_id: 4},
+    {id: 5, name: "Bakers", state_id: 5},
+    {id: 6, name: "Barcelona", state_id: 6},
+    {id: 7, name: "Lethbridge", state_id: 7},
+    {id: 8, name: "Westlock", state_id: 8},
   ];
 //UseStates
   const [countries, setCountries] = useState();

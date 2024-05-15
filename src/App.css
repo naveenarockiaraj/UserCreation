@@ -20,10 +20,7 @@ body{
     border-radius: 2rem;
     height: 630px;
 }
-#div-1:hover{box-shadow: 1px 2px 4px 4px #c8c1dd;
-    /* filter: blur(0px);
-    transform: scale(1.1);
-    opacity: 1; */
+#div-1:hover{box-shadow: 1px 1px 2px 2px #c8c1dd;
 }
 #form-new{
     margin: 50px;
@@ -51,8 +48,14 @@ body{
 h1{
     margin-top: -50px;
     text-align: center;
+    text-decoration: solid;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
 }
 #ant-btn-2{
     margin-left: 10px;
     width: 200px;
+}
+#ant-btn-1{
+    width: 200px;
+    
 }
