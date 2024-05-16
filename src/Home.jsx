@@ -6,7 +6,9 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import  apiServices  from './apiServices';
 
-const Home = () => {
+const Home = ({isEdit, setEdit, editDataList, setEditDataList}) => {
+    console.log(editDataList, "sssss")
+    const [form] = Form.useForm();
 const navigate = useNavigate();
 const countriesList = [
 {id: 1, name: "India"},    
@@ -39,6 +41,14 @@ const [countries, setCountries] = useState();
 const [states, setStates] = useState();
 const [cities, setCities] = useState();
 const [previewImage, setPreviewImage] = useState();
+const [name, setName]=useState('');  
+console.log(name, 'name')
+useEffect(() => {
+    if (editDataList && editDataList.name) {
+        setName(editDataList.name);
+    }
+}, [editDataList]);
+
 // css for form layout
 const layout = { labelCol: { span: 5,}, wrapperCol: { span: 15,}, };
 //Upload image 
@@ -98,6 +108,15 @@ return (
     {/* form */}
     <Form {...layout}
     id="form-new"
+    form={form}
+    initialValues={{ name: editDataList ? editDataList.name : '' ,
+        email: editDataList ? editDataList.email : '' ,
+        phone: editDataList ? editDataList.phone : '' ,
+        country: editDataList ? editDataList.country : '' ,
+        state: editDataList ? editDataList.state : '' ,
+        city: editDataList ? editDataList.city : '' ,
+
+     }}
     onFinish={onFinish} 
     style={{ maxWidth: 600, }}
     validateMessages={validateMessages} >
@@ -107,7 +126,7 @@ return (
     name={['name']}
     label="Name"
     rules={[ { required: true, max:15, min:8, }, ]} >
-    <Input />
+    <Input  />
 </Form.Item>
 
     <Form.Item 
@@ -133,7 +152,7 @@ return (
 
 <Form.Item name={['phone']}
 label="Number"
-rules={[ {  type: 'number', min:5, max:10, }, ]} >
+rules={[ {  type: 'number',}, ]} >
     <InputNumber />
 </Form.Item>
 
