@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { Avatar, Table } from 'antd';
+import { Avatar, Button, Table } from 'antd';
 import apiServices from './apiServices';
+import './App.css';
+
 
 const Utable = () => {
   const [tableList, setTableList]=useState([])
@@ -63,24 +65,11 @@ const Utable = () => {
     },
   ];
 
-  // Sample data for demonstration
-  const tableData = [
-    {
-      key: '1',
-      name: 'John Brown',
-      email: 'john@example.com',
-      number: 123456,
-      country: 'India',
-      state: 'Maharashtra',
-      city: 'Mumbai',
-      pincode: 400001,
-    },
-    // Add more sample data as needed...
-  ];
 
   return (
 
     <div style={{height:'100%'}}>
+      <Button type='dashed' id='ant-r-btn' >Back to form</Button>
       <div style={{height:'60vh'}}>
 <Table
         columns={tableColumns}
