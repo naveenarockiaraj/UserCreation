@@ -8,7 +8,7 @@ const apiServices = {
     addUserList: (data, editDataList) => {
         if (editDataList ) {
             console.log('TEST1','test');
-            return axios.put(`${baseURL}/user`, data)
+            return axios.put(`${baseURL}/user/${editDataList.id}`, data)
         }
         else {
             console.log('TEST2','test');

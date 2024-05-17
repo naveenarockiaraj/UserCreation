@@ -1,6 +1,6 @@
 import React from 'react'
 import './App.css';
-import { Button, Form, Input, InputNumber, Select, Upload, Image, message, Table } from 'antd';
+import { Button, Form, Input, InputNumber, Select, Upload, Image, message, Table, Row, Col } from 'antd';
 import { FcAddImage } from "react-icons/fc";
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -37,10 +37,10 @@ const citiesLits = [
 {id: 8, name: "Westlock", state_id: 'Quebec'},
 ];
 //UseStates
-const [countries, setCountries] = useState();
-const [states, setStates] = useState();
-const [cities, setCities] = useState();
-const [previewImage, setPreviewImage] = useState();
+const [countries, setCountries] = useState('');
+const [states, setStates] = useState('');
+const [cities, setCities] = useState('');
+const [previewImage, setPreviewImage] = useState('');
 const [name, setName]=useState('');  
 console.log(name, 'name')
 useEffect(() => {
@@ -69,7 +69,6 @@ setPreviewImage();
 //Country,state and city
 const handleCountryChange = (value)=>{
 console.log(value, "countryData");
-
 setCountries(value)
 setStates("")
 setCities("")
@@ -106,10 +105,12 @@ const onFinish = (values) => {
 return (
 <div className="App" id="div-1">
     {/* form */}
+    <Row gutter={16}>
     <Form {...layout}
     id="form-new"
     form={form}
-    initialValues={{ name: editDataList ? editDataList.name : '' ,
+    initialValues={{ 
+        name: editDataList ? editDataList.name : '' ,
         email: editDataList ? editDataList.email : '' ,
         phone: editDataList ? editDataList.phone : '' ,
         country: editDataList ? editDataList.country : '' ,
@@ -118,12 +119,13 @@ return (
         street: editDataList ? editDataList.street : '',
         pincode: editDataList ? editDataList.pincode : '',
         avatar: editDataList ? editDataList.avatar : '',
-     }}
+    }}
     onFinish={onFinish} 
     style={{ maxWidth: 600,  }}
     validateMessages={validateMessages} >
     <h1>User Form</h1>
 
+    
 <Form.Item
     name={['name']}
     label="Name"
@@ -215,6 +217,7 @@ label="Pincode" rules={[ {type:'number', }, ]}>
     </Button>
 </Form.Item>
 </Form>
+</Row>  
 </div>
 )
 }
