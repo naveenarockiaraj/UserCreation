@@ -5,6 +5,7 @@ import './App.css';
 import { CiEdit } from "react-icons/ci";
 import { MdDeleteOutline } from "react-icons/md";
 import { useNavigate } from 'react-router-dom';
+import { type } from '@testing-library/user-event/dist/type';
 
 const Utable = ({isEdit, setEdit, editDataList, setEditDataList}) => {
   const navigate= useNavigate()
@@ -79,8 +80,8 @@ const Utable = ({isEdit, setEdit, editDataList, setEditDataList}) => {
         }
         return(
         <>
-          <CiEdit onClick={()=>handleEdit()}/>
-          <MdDeleteOutline/>
+          <CiEdit className="edit-icon" onClick={()=>handleEdit()}/>
+          <MdDeleteOutline className="dlt-icon"/>
         </>
       )},
       // render: () => <a>Delete</a>,
@@ -90,7 +91,7 @@ const Utable = ({isEdit, setEdit, editDataList, setEditDataList}) => {
   return (
 
     <div style={{height:'100%'}}>
-      <Button type='primary' id='ant-r-btn' >Back to form</Button>
+      <Button type='primary' id='ant-r-btn' htmlType='submit' href='#'>Back to form</Button>
       <div style={{height:'60vh'}}>
 <Table
         columns={tableColumns}

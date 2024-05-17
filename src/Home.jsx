@@ -115,10 +115,12 @@ return (
         country: editDataList ? editDataList.country : '' ,
         state: editDataList ? editDataList.state : '' ,
         city: editDataList ? editDataList.city : '' ,
-
+        street: editDataList ? editDataList.street : '',
+        pincode: editDataList ? editDataList.pincode : '',
+        avatar: editDataList ? editDataList.avatar : '',
      }}
     onFinish={onFinish} 
-    style={{ maxWidth: 600, }}
+    style={{ maxWidth: 600,  }}
     validateMessages={validateMessages} >
     <h1>User Form</h1>
 
@@ -183,7 +185,7 @@ label="State" >
 
 <Form.Item
 name={['city']} 
- label="Citie">
+ label="City">
     <Select
     value={cities}
     onChange={onSelectCities}
