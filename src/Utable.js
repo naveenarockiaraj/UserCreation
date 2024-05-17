@@ -78,10 +78,21 @@ const Utable = ({isEdit, setEdit, editDataList, setEditDataList}) => {
           setEditDataList(params)
           navigate('/')
         }
+        const handleDelete = () => {
+          console.log(params, 'params');
+          apiServices.deleteUserlist(params)
+                  const updateUserData = tableList.filter((data) =>
+                      data.id !== params.id
+                  );
+                  setTableList(updateUserData);
+          // setTimeout(() => {
+          //   window.location.reload();
+          // }, 1000);
+        }
         return(
         <>
           <CiEdit className="edit-icon" onClick={()=>handleEdit()}/>
-          <MdDeleteOutline className="dlt-icon"/>
+          <MdDeleteOutline className="dlt-icon" onClick={()=>handleDelete()}/>
         </>
       )},
       // render: () => <a>Delete</a>,
@@ -91,7 +102,7 @@ const Utable = ({isEdit, setEdit, editDataList, setEditDataList}) => {
   return (
 
     <div style={{height:'100%'}}>
-      <Button type='primary' id='ant-r-btn' htmlType='submit' href='#'>Back to form</Button>
+      <Button type='primary' id='ant-r-btn' onClick={()=>navigate('/')}>Back to form</Button>
       <div style={{height:'60vh'}}>
 <Table
         columns={tableColumns}

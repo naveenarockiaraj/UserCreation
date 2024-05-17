@@ -94,7 +94,7 @@ required: '${label} is required!',
 //form submit
 const onFinish = (values) => {
     console.log(values, 'formdata');
-    apiServices.addUserList(values)
+    apiServices.addUserList(values, editDataList)
         .then(() => {
             navigate("/userdetail");
         })
@@ -134,13 +134,13 @@ return (
     <Form.Item 
     name={['avatar']}
     label="Photo">
-    {!previewImage && (
+    {!previewImage && ( 
     <Upload beforeUpload={handleUpload} >
         <Button id="ant-btn-1" icon={<FcAddImage />}>Upload </Button>
     </Upload>   )}
     {previewImage && (
     <div>
-        <Image width={100} src={previewImage} />
+        <Image width={100} height={50} src={previewImage} />
         <Button id="ant-btn-2" onClick={handleRemove} > Remove </Button>
     </div> )}
     </Form.Item>
@@ -185,7 +185,7 @@ label="State" >
 
 <Form.Item
 name={['city']} 
- label="City">
+    label="City">
     <Select
     value={cities}
     onChange={onSelectCities}
