@@ -53,6 +53,7 @@ useEffect(() => {
 const layout = { labelCol: { span: 5,}, wrapperCol: { span: 15,}, };
 //Upload image 
 const handleUpload = (image) => {
+    console.log('image', image);
 const isImage = image.type.startsWith('image/');
 if (!isImage) {
     message.error(`${image.name} is not an image file`);
@@ -134,7 +135,7 @@ return (
 </Form.Item>
 
     <Form.Item 
-    name={['avatar']}
+    // name={['avatar']}
     label="Photo">
     {!previewImage && ( 
     <Upload beforeUpload={handleUpload} >

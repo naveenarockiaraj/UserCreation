@@ -48,11 +48,11 @@ body{
     width: 200px;
     color: #626375;
     font-weight: 500;
-    background-color: #e0ba81;
+    background-color: #ecac4b;
     }
 #ant-btn:hover{
     background:url(https://images.pexels.com/photos/1723637/pexels-photo-1723637.jpeg?auto=compress&cs=tinysrgb&w=600);
-    color: rgb(56, 28, 28);
+    color: rgb(156, 133, 133);
     font-weight: bold;
     box-shadow:1px 1px 1px 1px #675cce;
     animation: 2s;
