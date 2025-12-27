@@ -25,6 +25,7 @@ const statesList = [
 {id: 6,name: "Barca", country_id: 'United Kingdom'},
 {id: 7,name: "Albert", country_id: 'Canada'},
 {id: 8,name: "Quebec", country_id: 'Canada'},
+{id: 9,name: "Alber", country_id: 'Canada'},
 ];
 const citiesLits = [
 {id: 1, name: "Mumbai", state_id: 'Maharashtra'},
@@ -35,6 +36,7 @@ const citiesLits = [
 {id: 6, name: "Barcelona", state_id: 'Barca'},
 {id: 7, name: "Lethbridge", state_id: 'Alber'},
 {id: 8, name: "Westlock", state_id: 'Quebec'},
+{id: 9, name: "Calgary", state_id: 'Alber'},
 ];
 //UseStates
 const [countries, setCountries] = useState('');
